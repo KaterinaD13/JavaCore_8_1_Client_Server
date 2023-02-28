@@ -10,13 +10,11 @@ public class MainClient {
         int port = 8083;
         try (Socket clientSocket = new Socket(host, port);
              PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream())))
-        {
+             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
             out.println("Ekaterina");
             String resp = in.readLine();
             System.out.println(resp);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
